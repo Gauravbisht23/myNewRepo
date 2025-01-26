@@ -69,8 +69,8 @@ updateContacts.add(ucon);
     }
 }
 }
-update updateContacts;  */
-
+update updateContacts;   */
+//updated code from tech journey by Ankit
 Map<Id, String> accountIdPhoneMap= new Map<Id, String>();
 List<Contact> updatedConlist = new List<Contact>();
 
