@@ -1,0 +1,25 @@
+<apex:page controller="wrapperExample1">
+ <apex:form >
+ <apex:pageBlock >
+ <apex:pageblockSection title="All Accounts details and its related contacts" collapsible="true" >
+ <apex:pageBlockTable value="{!wrapAccountList}" var="accWrap" id="table" title="All Accounts">
+<apex:column >
+    <apex:inputCheckbox value="{!accWrap.selected}"  />
+ 
+     </apex:column>
+     <apex:column value="{!accWrap.nm}" />
+ <apex:column value="{!accWrap.ac}" />     
+ <apex:column value="{!accWrap.acc.Phone}" />
+
+<apex:column breakBefore="false" colspan="2">
+ <apex:pageBlockTable value="{!accWrap.con}" var="c">
+ <apex:column value="{!c.Id}"/>
+ <apex:column value="{!c.Name}"/>
+ </apex:pageBlockTable>
+ </apex:column>
+
+</apex:pageBlockTable>
+ </apex:pageblockSection>
+ </apex:pageBlock>
+ </apex:form>
+ </apex:page>

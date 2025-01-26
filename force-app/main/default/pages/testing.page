@@ -1,0 +1,19 @@
+<apex:page Controller="renedered" >
+<apex:form >
+<apex:pageBlock >
+  <apex:pageBlockSection >
+    <apex:commandButton action="{!mycontroller}" value="Click to get Account"  />
+  </apex:pageBlockSection>
+  <apex:outputPanel rendered="{!rend}">
+  
+  <apex:pageBlock >
+  
+ <apex:pageBlockSection columns="1">
+   <apex:outputField value="{!acc.name}"/>
+   <apex:outputField value="{!acc.id}"/>
+ </apex:pageBlockSection> </apex:pageBlock>
+  
+  </apex:outputPanel>
+</apex:pageBlock>
+  </apex:form>
+</apex:page>

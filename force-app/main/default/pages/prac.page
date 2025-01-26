@@ -1,0 +1,16 @@
+<apex:page controller="practice">
+  <apex:form >
+     <apex:pageBlock >
+        Hello. 
+        <apex:outputLabel value=" Enter your Name" /> 
+           <apex:inputText value="{!show}">
+           <apex:actionsupport event="onclick" rerender="display" /> 
+            </apex:inputText>
+            
+            <apex:outputpanel id="display">
+        <apex:outputtext value="The name entered is {!show}"/>
+    </apex:outputpanel>   
+    
+     </apex:pageBlock>
+  </apex:form>
+</apex:page>

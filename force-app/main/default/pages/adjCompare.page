@@ -1,0 +1,75 @@
+<apex:page standardController="Pricing_Corp_Price_List__c"  recordSetVar="cp">
+<apex:form >
+  <apex:pageBlock >
+    <apex:pageBlockSection >
+      <apex:pageBlockTable value="{!cp}" var="c">
+        
+        <apex:column styleClass="classforbprice">
+          <apex:outputField value="{!c.Base_Corp_Price__c}" />
+        </apex:column>
+        <apex:column >
+          <apex:inputField value="{!c.adjustment_price__c}" styleClass="classforadprice" onchange="func();"/>
+        </apex:column>
+        <apex:column >
+          <apex:inputField value="{!c.adjustment_per__c }" styleClass="classforadjper" />
+        </apex:column>
+      </apex:pageBlockTable>
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:form>
+<script type="text/javascript">
+                function func()
+                {
+                    
+                     var abc = document.getElementsByClassName("classforbprice");
+                    var xyz = document.getElementsByClassName("classforadprice");
+                     var utv 
+                     alert('Heelo'+abc[0].innerText);
+                  alert('Heelo'+xyz[0].value);
+ if( abc[0].innerText > xyz[0].value )
+                        {alert('Sonu' )+xyz[0].value;}
+                    else{
+                        alert('titu');}
+                     }
+                
+                    //alert('Heelo'+xyz[1].value);
+                    // alert('Heelo'+utv[0].value);
+                    
+                /*    for(var i=0; i<abc.length; i++){
+                          Number(utv[i].value) = ((Number(xyz[i].value)-Number(abc[i].innertext))/Number(abc[i].innertext)*100;                 
+                                                  //utv[i]=abc[i];
+                                                  // alert('Heelo'+utv[i].innertext);
+                  }
+                    // alert('Hello'+ utv[0].value);
+                    //  document.getElementsByClassName("classforadjper") = utv;
+                    
+                     if(abc[0].innerText<xyz[0].value)
+                        {alert('Sonu');}
+                    else
+                        alert('titu');
+                    
+                    
+                   
+                    
+                     for(var i=0; i<abc.length; i++)
+                    {
+                        var abcde =abc[i].innerText;
+                        abcde = abcde.replace('$','');
+                        
+                            if(abcde > xyz[i].value)
+                            {
+                                //alert('ifcondition');
+                                xyz[i].style.backgroundColor = "yellow";
+                                // window.onbeforeunload = function() { return false }
+                            }
+                            else
+                            {
+                                //alert('Else Condition');
+                            }
+                        
+                    }  */
+                    
+               
+                </script>
+
+</apex:page>

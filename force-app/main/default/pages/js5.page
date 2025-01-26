@@ -1,0 +1,15 @@
+<apex:page id="pg">
+  <apex:form id="fm">
+   <apex:pageBlock id="pb">
+     <apex:pageBlockSection id="psb">
+       <apex:inputText id="name" onchange="show()"/>
+     </apex:pageBlockSection>
+   </apex:pageBlock>
+  </apex:form>
+  <script>
+  function show(){
+  var name= document.getElementById('pg:fm:pb:psb:name').value;
+  alert(name);
+  }
+  </script>
+</apex:page>

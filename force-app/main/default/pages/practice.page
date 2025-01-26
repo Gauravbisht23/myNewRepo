@@ -1,0 +1,27 @@
+<apex:page standardController="Account" extensions="AccountpickList" >
+    
+  <apex:form >
+    <apex:pageBlock >
+      <apex:pageBlockSection >
+          <apex:selectList size="1" label="Account Name" value="{!acname}">
+            <apex:selectOptions value="{!industry}" >
+             </apex:selectOptions>
+          </apex:selectList>
+        </apex:pageBlockSection>
+         </apex:pageBlock>
+       <apex:pageBlock >
+        <apex:pageBlockSection rendered="{!report}">
+         <apex:pageBlockTable value="{!repoAcc}" var="acc">
+             <apex:column value="{!acc.name}" />
+             <apex:column value="{!acc.industry}" />
+             <apex:column value="{!acc.phone}" />
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:pageBlockButtons location="bottom">
+                            <apex:commandButton value="GO" action="{!Go}"/>
+                        </apex:pageBlockButtons>
+        
+      </apex:pageBlock>
+    </apex:form>
+ 
+</apex:page>

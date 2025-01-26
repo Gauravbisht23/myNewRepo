@@ -1,0 +1,18 @@
+<apex:page standardController="Account" extensions="c11" >
+<apex:form > 
+      <apex:pageBlock >
+        <apex:inputText />  value="{!g}" />
+        
+        <apex:commandButton value="Show result" action="{!showlist}"/>
+        
+        <apex:PageBlockTable value="{!acts}" var="a">
+        <apex:column value="{!a.Name}"/>
+        <apex:column value="{!a.Type}"/>
+        
+        </apex:PageBlockTable>
+        
+      </apex:pageBlock>
+
+   </apex:form>
+  
+</apex:page>

@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Submit Data Form" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="First Name" name="firstName"></lightning-input>
+            <lightning-input type="text" label="Last Name" name="lastName"></lightning-input>
+            <lightning-input type="email" label="Email" name="email"></lightning-input>
+            <lightning-input type="number" label="Age" name="age"></lightning-input>
+            <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

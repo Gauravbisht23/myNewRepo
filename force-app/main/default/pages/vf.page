@@ -1,0 +1,12 @@
+<apex:page StandardController="Account" extensions="typees" recordSetVar="act">
+  <apex:form >
+   <apex:pageBlock title="Record by Types">
+     <apex:pageblockTable value="{!act}" var="a">
+     <apex:column value="{!a.Name}"/>
+     <apex:column value="{!a.Type}"/>
+     
+     </apex:pageblockTable>
+     
+   </apex:pageBlock>
+  </apex:form> 
+</apex:page>

@@ -1,0 +1,15 @@
+<apex:page standardController="contact" extensions="WizardForContact">
+    <apex:form >
+     <apex:pageBlock >
+      <apex:pageBlockTable value="{!listOfCon}" var="con" >
+         <apex:column >
+           <apex:inputField value="{!con.name}"/> 
+         </apex:column>
+         <apex:column >
+           Phone :<apex:inputText value="{!con.Phone}"/> 
+         </apex:column> 
+      </apex:pageBlockTable> 
+     </apex:pageBlock>
+        <apex:commandButton action="{!save}" value="Next"/>
+    </apex:form>
+</apex:page>

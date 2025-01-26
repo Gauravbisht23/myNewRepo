@@ -1,0 +1,43 @@
+<apex:page standardController="Pricing_Corp_Price_List__c" docType="html-5.0">
+ <apex:form id="fm">
+   
+     <apex:pageBlock id="pb" >
+       <apex:pageBlockSection id="pbs" >
+         <apex:inputfield value="{!Pricing_Corp_Price_List__c.Base_Corp_Price__c}" id="newp" onchange="myFunction()"/>
+         <apex:inputText id="oldp"   />
+                    
+                    <Script>
+                    
+                    
+                    function myFunc() {
+    var  x,y;
+  
+     x = document.getElementById("{!$Component.oldp}").value;
+     y = document.getElementById("{!$Component.newp}").value;  
+                 
+                 
+       
+        if(y>x){
+        alert('Sorry');
+       
+        }   
+    
+                 }
+                    </script>
+       </apex:pageBlockSection>
+     </apex:pageBlock>
+   
+  
+   <Script>
+                    function myFunction(){
+                    var a;
+                    a=document.getElementById('fm:bd:pb:pbs:newp').value;
+                  
+                    document.getElementById('fm:bd:pb:pbs:oldp').value = a;
+                      alert('Sorry');
+                    }
+                    </Script>
+ </apex:form>
+ <body onload="Func()" id="bd">
+  </body>
+</apex:page>

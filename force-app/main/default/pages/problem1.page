@@ -1,0 +1,24 @@
+<apex:page standardController="Pricing_Corp_Price_List__c" recordSetVar="r">
+  <Apex:form >
+    <div>
+      <apex:pageBlock >
+        <apex:pageBlockSection id="pbs" >
+          <apex:inputField value="{!Pricing_Corp_Price_List__c.dt__c}" id="bp" onchange="func()" />
+        
+          <Script>
+          function func(){
+          
+          var a= document.getElementById('{!$Component.bp}').value;
+      <!--document.getElementById('{!$Component.np}').value=a;-->
+          alert(a);
+          }
+          
+          
+          
+          </Script>
+        </apex:pageBlockSection>
+      </apex:pageBlock>
+    </div>
+  </Apex:form>
+  
+</apex:page>

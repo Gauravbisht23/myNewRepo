@@ -1,0 +1,7 @@
+<aura:component >
+	<h1> Hello There </h1>
+    
+    <div class="Red"> Red </div>
+    <div class="Yellow"> Yellow </div>
+    <div class="Pink"> Pink </div>
+</aura:component>

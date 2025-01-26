@@ -1,0 +1,41 @@
+<apex:page controller="WrapperAccount">
+    <script>
+     function selectAllFinalList(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByClassName("inputId");
+        for(var i=0; i<inputCheckBox.length; i++){
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+    </script>
+ <apex:form >
+     <apex:pageBlock >
+         <apex:pageBlockButtons >
+                <apex:commandButton value="Select the Account" action="{!go}" reRender="hi"  /> 
+             </apex:pageBlockButtons>
+         <apex:pageBlockSection columns="2">
+             
+             <apex:pageBlockTable value="{!wrapp}" var="w" >
+                 <apex:column >
+                     <apex:facet name="header">
+                         <apex:inputCheckbox onclick="selectAllFinalList(this,'input')"/>
+                     </apex:facet>
+                     <apex:inputCheckbox value="{!w.check}" styleClass="inputId" id="input"/>
+                 </apex:column>
+                 <apex:column value="{!w.ac.id}" />
+                 <apex:column value="{!w.ac.Name}" />
+                 <apex:column value="{!w.ac.phone}" />
+             </apex:pageBlockTable>
+             <apex:pageBlockTable value="{!selectacc}" var="a" id="hi">
+                 <apex:column value="{!a.id}" />
+                 <apex:column value="{!a.Name}" />
+                 <apex:column value="{!a.phone}" />
+                 
+             </apex:pageBlockTable>
+             
+             
+         </apex:pageBlockSection>
+     </apex:pageBlock>
+ </apex:form>
+</apex:page>

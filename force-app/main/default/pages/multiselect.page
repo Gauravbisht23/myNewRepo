@@ -1,0 +1,10 @@
+<apex:page standardController="Account"  >
+  <apex:form >
+   <!-- <apex:selectList value="{!value}" size="3" multiselect="true" label="blah" id="blah" >
+        <apex:selectOptions value="{!options}" /> 
+        <apex:commandLink value="Del" action="{!delete}"/>
+    </apex:selectList>-->
+   
+    <apex:commandLink value="Del" action="{!delete}"/>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page controller="ctrlAccController"  >
+
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!showList}" id="accountId" var="a1">
+            <apex:column headerValue="Account Name" value="{!a1.Name}"/>
+            <apex:column headerValue="Account Type" value="{!a1.Type}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

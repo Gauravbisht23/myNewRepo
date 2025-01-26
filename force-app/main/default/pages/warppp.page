@@ -1,0 +1,24 @@
+<apex:page controller="wrappp">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Get contacts" action="{!go}" reRender="aw"  />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockTable value="{!wrap}" var="w">
+                    <apex:column >
+                        <apex:inputCheckbox value="{!w.selected}" />
+                    </apex:column>
+                    <apex:column headerValue=" name" value="{!w.ac.name}" />
+                
+                </apex:pageBlockTable>
+                <apex:pageBlockTable value="{!wrap}" var="w" id="aw">
+                    <apex:column headerValue=" account" value="{!w.ac.name}" />
+                    <apex:column headerValue=" contact" value="{!w.con.name}" />
+                </apex:pageBlockTable>
+                
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page standardController="contact" extensions="contactsshow" >
+    <Script>
+        function he();
+    </Script>
+ <apex:form >
+  <apex:pageBlock >
+   <apex:pageBlockSection >
+    <apex:inputField value="{!contact.accountid}" onclick="he()" >
+        <apex:actionFunction action="{!go}" name="he" reRender="tab">
+            <!--apex:actionSupport event="onchange" action="{!go}" reRender="tab" -->
+        <apex:param assignTo="{!adj}" value="{!contact.accountid}" name="adj"/>
+        </apex:actionFunction>
+       </apex:inputField>
+       <apex:pageBlockTable value="{!co}" var="c" id="tab">
+           <apex:column headerValue="Name" value="{!c.name}" />
+           <apex:column headerValue="phone" value="{!c.phone}" />
+       </apex:pageBlockTable>
+   </apex:pageBlockSection>
+  </apex:pageBlock>
+ </apex:form>
+</apex:page>

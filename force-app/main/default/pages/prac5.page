@@ -1,0 +1,14 @@
+<apex:page controller="accrec" >
+  <apex:form >
+   <apex:pageBlock >
+     <apex:pageBlockSection >
+     <apex:pageblockTable value="{!Acc}" var="a">
+       <apex:column >
+        <apex:inputfield value="{!a.type}" />
+       </apex:column>
+     </apex:pageblockTable>
+     </apex:pageBlockSection>
+   </apex:pageBlock>
+  </apex:form>
+
+</apex:page>

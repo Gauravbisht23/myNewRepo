@@ -1,0 +1,16 @@
+<apex:page controller="practice1">
+  <apex:form >
+    <apex:pageBlock title=" Getter Setter">
+       <apex:outputLabel value=" Testing of Setter Getter"/>
+        
+         <apex:inputText value="{!go}">
+         <apex:actionSupport event="onclick" reRender="yo"/>
+         </apex:inputText>
+         
+         <apex:outputPanel >
+           <apex:outputText value="Yo got it {!go}" id="yo" />
+         </apex:outputPanel>
+    </apex:pageBlock>
+  </apex:form>
+  
+</apex:page>

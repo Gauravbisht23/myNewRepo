@@ -1,0 +1,10 @@
+<apex:page id="pg">
+    <apex:form id="fm">
+     <button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+      
+    </apex:form> 
+ </apex:page>

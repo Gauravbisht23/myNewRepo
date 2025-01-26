@@ -1,0 +1,43 @@
+<apex:page standardController="Pricing_Corp_Price_List__c" docType="HTML-5.0">
+
+   
+  <Apex:form >
+  
+    
+      <apex:pageBlock >
+        <apex:pageBlockSection >
+        
+          <apex:inputField value="{!Pricing_Corp_Price_List__c.Base_Corp_Price__c}" id="bp" onchange="funcc()"  />
+          <apex:inputHidden value="{!Pricing_Corp_Price_List__c.Base_Corp_Price__c}" id="np"/> 
+          
+        
+    <!--  <script> var previousOnload = window.onload; window.onload = function() { if (previousOnload) { previousOnload();func(); }  } </script> -->
+        <Script >
+        <!--  function func(){
+         
+          var a=document.getElementById('{!$Component.bp}').value;
+          document.getElementById('{!$Component.np}').value=a;
+          
+        
+         }
+        -->
+         function funcc(){
+          var a=document.getElementById('{!$Component.bp}').value;
+         var b= document.getElementById('{!$Component.np}').value;
+          
+         if(a<b){
+         alert('sorry');
+         document.getElementById('{!$Component.bp}').value=b;
+         }
+         }
+          
+          
+          
+          </Script> 
+     
+        </apex:pageBlockSection>
+      </apex:pageBlock>
+     
+  </Apex:form>
+  
+</apex:page>

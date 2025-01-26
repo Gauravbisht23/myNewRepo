@@ -1,0 +1,52 @@
+<aura:component  controller="AccountsController">
+    <aura:attribute name="checkbox" type="boolean" default="false" />
+    <aura:if isTrue="{!v.checkbox}">
+    <ui:button label=" It is True">
+        </ui:button>
+        <aura:set attribute="else">
+        <ui:button label="it is false"></ui:button>
+        </aura:set>
+    </aura:if>
+    
+   It is Tablet {!$Browser.isTablet}
+   It is iphone {!$Browser.isIPhone}
+   It is Android {!$Browser.isAndroid}
+   What is this? {!$Browser.formFactor}
+    
+    <aura:attribute name="numertype" type="list" />
+    <ui:button label="Insert" press="{!c.inn}" />
+    <aura:iteration var="num" items="{!v.numertype}">
+        {!num.value}
+    </aura:iteration>
+    
+    <ui:inputText label="Name" aura:id="name" placeholder="Enter You Name" value="Hello"></ui:inputText>
+    <ui:button aura:id="optbutton" label="Save" press="{!c.getinput}">
+    </ui:button>
+    <ui:outputText aura:id="opttext" value=""/>
+    
+    <aura:attribute name="FirstName" type="String" default="First"/>
+    <aura:attribute name="LastName" type="String" default="Last" />
+    <br/> <br/>
+    <ui:inputText label="First Name" value="{!v.FirstName}" updateOn="keyup" />
+    <ui:inputText label="Last Name" value="{!v.LastName}" updateOn="keyup" />
+        <br/> <br/>
+    <ui:outputText value="{!v.FirstName+'          '+v.LastName}"/>
+    
+    
+     <aura:attribute name="accounts" type="List" />
+     <ui:button label="Show" press="{!c.show}" />
+    <aura:iteration items="{!v.accounts}" var="account">
+                <tr>
+                    <th scope="row"><div class="slds-truncate" title="{!account.Id}">{!account.Id}</div></th>
+                    <td><div class="slds-truncate" title="{!account.Name}">{!account.Name}</div></td>
+                    <td><div class="slds-truncate" title="{!account.Type}">{!account.Type}</div></td>
+                    <td><div class="slds-truncate" title="{!account.NumberOfEmployees}">{!account.NumberOfEmployees}</div></td>
+                    <td><div class="slds-truncate" title="{!account.TickerSymbol}">{!account.TickerSymbol}</div></td>
+                    <td><div class="slds-truncate" title="{!account.Phone}">{!account.Phone}</div></td>
+                    <td>
+                       ]
+                    </td>
+                </tr>
+            </aura:iteration>
+   
+</aura:component>

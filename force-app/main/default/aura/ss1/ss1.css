@@ -1,0 +1,19 @@
+.THIS {
+    background-color:orange;
+        padding-top:12px;
+}
+
+h1.THIS{
+    font-size:60px;
+    font-weight:bold;
+}
+
+.THIS .Red{
+    background-color:Red;
+}
+.THIS .Yellow{
+    background-color:Yellow;
+}
+.THIS .Pink{
+    background-color:Pink;
+}

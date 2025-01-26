@@ -1,0 +1,14 @@
+<apex:page controller="c6">
+ <apex:form >
+ <apex:inputtext value="{!keyword}"/>
+ <apex:commandButton value="Page Type" action="{!Searchtype}"/>
+ <apex:pageBlock >
+ <apex:pageBlockTable value="{!keyword}" var="k">
+ <apex:column value="{!k.Name}"/>
+ <apex:column value="{!k.Type}"/>
+ 
+ </apex:pageBlockTable>
+ </apex:pageBlock>
+ 
+ </apex:form>
+</apex:page>

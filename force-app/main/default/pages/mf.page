@@ -1,0 +1,15 @@
+<apex:page controller="c2">
+<apex:form >
+<apex:pageBlock >
+<apex:pageblockSection >
+<Apex:commandButton Value="Show it" action="{!Showlist}" rerender="MyTable"/>
+<Apex:commandButton Value="Show All the Prospect Type" action="{!ShowTypelist}" rerender="MyTable"/>
+<apex:pageblockTable value="{!m}" var="i" id="MyTable">
+<apex:column value="{!i.Name}"/>
+<apex:column value="{!i.Type}"/>
+
+</apex:pageblockTable> 
+ </apex:pageblockSection>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

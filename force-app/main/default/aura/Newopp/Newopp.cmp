@@ -1,0 +1,8 @@
+<aura:component controller="Newopp" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+       <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="sObjectName" type="String" />
+         <b>This is recordID {!v.recordId} </b><br/>
+    <b>This is SObjectName {!v.sObjectName} </b><br/>
+</aura:component>

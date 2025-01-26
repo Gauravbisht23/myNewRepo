@@ -1,0 +1,35 @@
+<apex:page controller="selectCheckboxController">
+  <apex:form >
+      <apex:pageBlock title="Selection of Account type">
+      
+      
+          <apex:selectList size="1" value="{!type}" multiselect="false">
+          <apex:actionSupport event="onchange" action="{!getAccounts}"  rerender="cases_table"/>
+             <apex:selectOptions value="{!selectType}" />
+          </apex:selectList>
+          
+          <apex:pageBlock id="cases_table" >
+          
+                <apex:pageBlockTable value="{!accList}" var="a" rows="50" >
+                <apex:column headerValue="Select"> 
+                
+
+           <apex:inputCheckbox value="{!a.selected}"/>  
+         </apex:column>
+                <apex:column value="{!a.acc.Name}"/>
+                 <apex:column value="{!a.acc.Phone}"/>
+                  <apex:column value="{!a.acc.Type}"/>
+                </apex:pageBlockTable>
+                <apex:commandButton value="Go" reRender="filter_table" action="{!getSelected}"/>
+                </apex:pageBlock>
+ <apex:pageBlock id="filter_table" title="Selected Result">
+
+                <apex:pageBlockTable value="{!selectedAccount}" var="a" rows="50" > 
+                <apex:column value="{!a.acc.Name}"/>
+                 <apex:column value="{!a.acc.Phone}"/>
+                  <apex:column value="{!a.acc.Type}"/>
+                </apex:pageBlockTable>
+           </apex:pageBlock>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,64 @@
+<apex:page standardController="Account" extensions="AccForDemoWrapperApx" recordSetVar="Accounts">
+    <script type="text/javascript">
+       
+    
+       function selectAllFinalList(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByClassName("inputId");
+        for(var i=0; i<inputCheckBox.length; i++){
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+    </script>
+    <Apex:form >
+     <apex:pageBlock >
+       <apex:pageBlockSection title="Type" collapsible="false">
+        <apex:inputField value="{!Account.type}" styleClass="perctg">
+          
+           <apex:actionSupport event="onchange" action="{!go}" reRender="pb1" />
+        </apex:inputField>
+         <apex:inputField value="{!Account.industry}"/>
+         
+           
+       </apex:pageBlockSection>
+        <apex:pageBlockSection title="Account name" collapsible="false">
+          <apex:pageBlockTable value="{!wrapAccountList}" var="go" id="pb1">
+              <apex:column >
+                        <apex:facet name="header">
+                            <apex:inputCheckbox onclick="selectAllFinalList(this,'inputId')"   />
+                        </apex:facet>                       
+                            <apex:inputCheckbox value="{!go.selected}" styleClass="inputId" id="inputId" />
+                    </apex:column>
+             <apex:column value="{!go.i}"/>
+              <apex:column value="{!go.acc.name}"/>
+               <apex:column value="{!go.acc.Type}"/>
+           </apex:pageBlockTable>
+        </apex:pageBlockSection> 
+     </apex:pageBlock>
+      <!--  <apex:commandButton action="{!First}" value="<<" title="First" rendered="{!hasnext}"/> -->
+        <apex:commandButton action="{!addToList}" value="Go"/>
+        
+        <apex:pageBlock >
+          <apex:pageBlockTable value="{!demoFinal}" var="df">
+              <apex:column value="{!df.name}"/>
+           </apex:pageBlockTable>
+        </apex:pageBlock>
+    </Apex:form>
+    <script>
+    function selectedPercentage()    
+    {   
+        window.addEventListener('load', function () {
+            var eles = document.getElementsByClassName('perctg');
+            eles[0][0].selected=true;
+        })
+        return;   
+    }    
+    selectedPercentage();
+     function color(element)
+       {
+         var a= element.value;
+         element.style.backgroundColor="green";
+       }
+    </script>
+</apex:page>

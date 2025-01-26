@@ -1,0 +1,31 @@
+<apex:page standardController="addition__c"   >
+ <apex:form >
+ <apex:pageBlock Title="Addition" >
+ <apex:selectOption >
+ 
+ <apex:pageBlockSection >
+ <apex:inputField value="{!addition__c.Name}">
+ <apex:actionsupport event="onchange" rerender="DispId" />
+ </apex:inputField>
+ <apex:inputField value="{!addition__c.Price_A__c}">
+ <apex:actionsupport event="onchange" rerender="DispId" />
+ </apex:inputField>
+ 
+<apex:inputField value="{!addition__c.Price_B__c}"/>
+<apex:inputField value="{!addition__c.Price_C__c}"/>
+<apex:outputpanel id="DispId"> 
+ <apex:outputField value="{!addition__c.total__c}" />
+ </apex:outputpanel>
+
+ 
+
+
+   </apex:pageBlockSection>
+   <apex:actionSupport event="Onclick" action="{!Save}" reRender="pic"/>
+   
+   </apex:selectOption>
+   </apex:pageBlock>
+  
+ </apex:form>
+ 
+</apex:page>

@@ -1,0 +1,73 @@
+<apex:page standardController="Account" extensions="AccForDemoWrapperApx" recordSetVar="Accounts">
+    <script type="text/javascript">
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("inputId");
+            for(var i=0; i<inputCheckBox.length; i++){
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+    
+       function selectAllFinalList(obj,receivedInputID){
+        var inputCheckBox = document.getElementsByClassName("inputId1");
+        for(var i=0; i<inputCheckBox.length; i++){
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+    </script>
+    <Apex:form >
+     <apex:pageBlock >
+       <apex:pageBlockSection title="Type" collapsible="false">
+        <apex:inputField value="{!Account.type}" styleClass="perctg">
+          
+           <apex:actionSupport event="onchange" action="{!go}" reRender="pb1" />
+        </apex:inputField>
+         <apex:inputField value="{!Account.industry}"/>
+           <!--apex:outputPanel styleClass="requiredInput" layout="block"> 
+           <apex:outputPanel styleClass="requiredBlock" layout="block"/>    
+           <apex:inputText label="input" required="true" />
+           </apex:outputPanel-->    
+       <!--    <apex:selectlist size="1" styleClass="perctg" value="{!name}">
+              
+              <apex:selectoptions value="{!Typee}"/>
+           </apex:selectlist> 
+        <apex:inputText value="{!account.name}" /> -->
+           
+       </apex:pageBlockSection>
+        <apex:pageBlockSection title="Account name" collapsible="false">
+          <apex:pageBlockTable value="{!wrapAccountList}" var="go" id="pb1">
+              <apex:column >
+                        <apex:facet name="header"> 
+                           <apex:inputCheckbox onclick="selectAllFinalList(this,'inputId1')" value="{!selected}" /> 
+                        </apex:facet>                       
+                        <apex:inputCheckbox styleClass="inputId1" id="inputId1" value="{!go.selected}" />
+                    </apex:column>
+             <apex:column value="{!go.i}"/>
+              
+              <apex:column value="{!go.acc.name}"/>
+               <apex:column value="{!go.acc.Type}"/>
+           </apex:pageBlockTable>
+        </apex:pageBlockSection> 
+     </apex:pageBlock>
+        <apex:commandButton action="{!First}" value="<<" title="First" rendered="{!hasnext}"/>
+    </Apex:form>
+    <script>
+    function selectedPercentage()    
+    {   
+        window.addEventListener('load', function () {
+            var eles = document.getElementsByClassName('perctg');
+            eles[0][0].selected=true;
+        })
+        return;   
+    }    
+    selectedPercentage();
+     function color(element)
+       {
+         var a= element.value;
+         element.style.backgroundColor="green";
+       }
+    </script>
+</apex:page>

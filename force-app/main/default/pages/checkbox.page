@@ -1,0 +1,19 @@
+<!----------- Creating this page for dispaly Opportunity fields object in single table with check box ---------->
+
+<apex:page controller="WrapperIntStringDisplayClass">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:pageBlockTable value="{!lstwrapperIntString}" var="w">
+                    <apex:column headervalue="click2Select">
+                        <apex:inputcheckbox />
+                    </apex:column>
+                    <apex:column headervalue="Opportunity fields">
+                        {!w.Id}
+                        {!w.Name}                 
+                    </apex:column>    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

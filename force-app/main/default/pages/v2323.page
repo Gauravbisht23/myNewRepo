@@ -1,0 +1,35 @@
+<apex:page standardController="Account" extensions="AccountType" ShowHeader="false" >
+  <apex:form >
+         <apex:pageBlock >
+              Account Type: 
+              <apex:selectList size="1" value="{!selectedType}"> 
+                    <apex:selectOption itemvalue="None" itemLabel="--None--"/>
+                    <apex:selectOption itemvalue="Prospect" itemLabel="Prospect"/>
+                    <apex:selectOption itemvalue="Customer - Direct" itemLabel="Customer - Direct"/>
+                    <apex:selectOption itemvalue="Customer - Channel" itemLabel="Customer - Channel"/>
+                    <apex:selectOption itemvalue="Installation Partner" itemLabel="Installation Partner"/>
+            <apex:actionSupport event="onchange" reRender="Details" action="{!queryAccount}"/ > 
+                    
+                     
+              </apex:selectList>
+              
+              
+                  
+              
+          </apex:pageBlock>
+           
+           
+           <apex:pageBlock >
+              <apex:pageBlockSection title="Account records" columns="1" id="Details" >
+                  <apex:pageBlockTable value="{!ListOfMatchingTypeAccount}" var="acc">
+                     
+                      <apex:column value="{!acc.Id}"/>
+                      <apex:column value="{!acc.Name}"/>
+                       <apex:column value="{!acc.phone}"/>
+                      
+                      
+                  </apex:pageBlockTable>
+              </apex:pageBlockSection>
+          </apex:pageBlock>
+     </apex:form>
+</apex:page>

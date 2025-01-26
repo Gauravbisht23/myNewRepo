@@ -1,0 +1,10 @@
+<apex:page standardController="Contact" extensions="WizardForContact">
+    <apex:form >
+     <apex:pageBlock >
+      <apex:pageBlockSection title="Confirmatiom">
+          This is a Confirmation that Contact <b>{!contactName}</b> phone number has been updated.<br/>
+          Thanks.
+      </apex:pageBlockSection>
+     </apex:pageBlock>
+    </apex:form>
+</apex:page>

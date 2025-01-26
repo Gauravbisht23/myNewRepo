@@ -1,0 +1,20 @@
+<apex:page standardController="Account" extensions="AccountTypeQuery" showHeader="false">
+   <apex:form >
+         <apex:pageBlock id="Chosen" >
+              Account Type: 
+              <apex:selectList size="1" value="{!selectedType}"> 
+                    <apex:selectOptions value="{!AccountType}"/>  
+              </apex:selectList>
+              <apex:pageBlockButtons >
+                  <apex:commandButton value="Query Account Records" action="{!queryAccount}" reRender="Chosen,AccRecords"/>
+              </apex:pageBlockButtons>
+          </apex:pageBlock>
+          <apex:pageBlock id="AccRecords">
+              <apex:pageBlockSection title="Account records" collapsible="false">
+                  <apex:pageBlockTable value="{!ListOfMatchingTypeAccount}" var="acc">
+                      <apex:column value="{!acc.Name}"/>
+                  </apex:pageBlockTable>
+              </apex:pageBlockSection>
+          </apex:pageBlock>
+     </apex:form>
+</apex:page>

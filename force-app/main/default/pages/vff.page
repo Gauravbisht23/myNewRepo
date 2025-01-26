@@ -1,0 +1,13 @@
+<apex:page controller="Helllloss">
+
+  <apex:form >
+   <apex:pageBlock >
+      <apex:pageBlockSection >
+        <apex:inputText value="{!Acc}" label="What is your name"/>
+        <script>
+        alert('{!Acc}')
+        </script>
+      </apex:pageBlockSection>
+   </apex:pageBlock>
+  </apex:form>
+</apex:page>

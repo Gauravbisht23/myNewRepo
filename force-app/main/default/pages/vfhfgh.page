@@ -1,0 +1,13 @@
+<apex:page controller="MyController1">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:commandLink action="{!commandLinkAction}" value="Advance Search"  reRender="thePanel" />
+
+<apex:outputPanel id="thePanel"  layout="block">
+</apex:outputPanel>
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

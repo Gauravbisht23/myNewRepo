@@ -1,0 +1,13 @@
+<template>
+    <template if:true={account}>
+<p> Name: {account.Name.value}</p>
+<p> phone: {account.Phone.value}</p>
+<p> website: {account.Website.value}</p>
+    </template>
+    <template if:false={account}>
+<p>loading....</p>
+
+    </template>
+</template>
+
+

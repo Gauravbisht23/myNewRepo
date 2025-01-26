@@ -1,0 +1,22 @@
+<apex:page standardController="Contact" extensions="June9apx" >
+    <apex:form >
+        <apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:inputField value="{!contact.AccountID}"  >
+                    <apex:actionSupport event="onchange" action="{!actionspt}" 	>
+                        
+                    </apex:actionSupport>
+                </apex:inputField>
+            
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1" rendered="{!abc}">
+            	<apex:pageBlockTable value="{!rec}" var="r">
+                    <apex:column value="{!r.name}" />
+                    <apex:column value="{!r.phone}" />
+                
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>
